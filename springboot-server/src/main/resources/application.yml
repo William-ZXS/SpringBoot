@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+### 开发为dev，提交到测试环境改为test，生产则改为prod
+  profiles:
+    active: dev
+
