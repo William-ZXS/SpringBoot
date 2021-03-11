@@ -1,7 +1,10 @@
 package com.william.server.controller;
 
 
-import com.william.server.entity.request.NewOrder;
+
+import com.william.server.entity.db.Order;
+import com.william.server.entity.request.OrderNew;
+import com.william.server.entity.response.ApiResp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,15 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021-03-10
  */
 
-@Api(value = "订单",tags = "dingdan")
+@Api(tags = "订单")
 @RestController
 @RequestMapping("/order")
 public class OrderController {
 
     @ApiOperation(value = "创建订单")
     @PostMapping("/new")
-    Object newOrder(@RequestBody NewOrder newOrder){
-        System.out.print("newOrder======"+newOrder);
-        return newOrder;
+    ApiResp<OrderNew> newOrder(@RequestBody OrderNew orderNew ){
+        System.out.print("newOrder======"+orderNew);
+        return ApiResp.ok(orderNew);
     }
 }

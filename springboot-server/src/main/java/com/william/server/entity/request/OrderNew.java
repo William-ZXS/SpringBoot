@@ -7,7 +7,7 @@ import lombok.Data;
 
 @ApiModel(value = "订单")
 @Data
-public class NewOrder {
+public class OrderNew {
 
 
     /**
