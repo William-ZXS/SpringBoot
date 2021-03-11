@@ -1,6 +1,6 @@
 package com.william.server.service.impl;
 
-import com.william.server.entity.Order;
+import com.william.server.entity.db.Order;
 import com.william.server.mapper.OrderMapper;
 import com.william.server.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,4 +1,4 @@
-package com.william.server.entity;
+package com.william.server.entity.db;
 
 import java.io.Serializable;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 用户表
+ * 库存表
  * </p>
  *
  * @author william
@@ -14,18 +14,13 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class User implements Serializable {
+public class Stock implements Serializable {
 
 
     /**
-     * 姓名
+     * 库存
      */
-    private String name;
-
-    /**
-     * 用户编号
-     */
-    private String userNo;
+    private Integer num;
 
 
 }

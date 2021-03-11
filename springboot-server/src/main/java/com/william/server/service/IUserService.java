@@ -1,6 +1,6 @@
 package com.william.server.service;
 
-import com.william.server.entity.User;
+import com.william.server.entity.db.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,6 +1,6 @@
 package com.william.server.service;
 
-import com.william.server.entity.Stock;
+import com.william.server.entity.db.Stock;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

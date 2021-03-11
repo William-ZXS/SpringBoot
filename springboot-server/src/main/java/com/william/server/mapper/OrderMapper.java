@@ -1,6 +1,6 @@
 package com.william.server.mapper;
 
-import com.william.server.entity.Order;
+import com.william.server.entity.db.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

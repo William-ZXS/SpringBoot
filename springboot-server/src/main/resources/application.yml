@@ -1,8 +1,18 @@
 server:
-  port: 8080
+  port: 9000
 
 spring:
 ### 开发为dev，提交到测试环境改为test，生产则改为prod
   profiles:
     active: dev
 
+
+
+knife4j:
+  basic:
+    ## 开启Swagger的Basic认证功能,默认是false
+    enable: true
+    ### Basic认证用户名
+    username: william
+    ### Basic认证密码
+    password: william

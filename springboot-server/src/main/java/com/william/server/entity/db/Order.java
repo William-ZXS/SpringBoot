@@ -1,4 +1,4 @@
-package com.william.server.entity;
+package com.william.server.entity.db;
 
 import java.io.Serializable;
 import lombok.Data;

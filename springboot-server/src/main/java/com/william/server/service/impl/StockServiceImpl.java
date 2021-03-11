@@ -1,6 +1,6 @@
 package com.william.server.service.impl;
 
-import com.william.server.entity.Stock;
+import com.william.server.entity.db.Stock;
 import com.william.server.mapper.StockMapper;
 import com.william.server.service.IStockService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
