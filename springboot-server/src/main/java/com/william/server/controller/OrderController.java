@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 /**
  * <p>
@@ -32,6 +32,7 @@ public class OrderController {
     @PostMapping("/new")
     ApiResp<OrderNew> newOrder(@RequestBody OrderNew orderNew ){
         System.out.print("newOrder======"+orderNew);
+
         return ApiResp.ok(orderNew);
     }
 }

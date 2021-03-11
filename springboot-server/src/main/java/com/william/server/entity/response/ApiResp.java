@@ -2,25 +2,30 @@ package com.william.server.entity.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
 
-@Data
+
 @ApiModel(value = "响应信息主体")
 public class ApiResp<T> implements Serializable {
     private static  final long serialVersionUID = 1L;
     private static String SUCCESS = "200";
     private static String FAIL = "1";
 
+    @Getter
+    @Setter
     @ApiModelProperty(value = "返回标记：成功标记=200，失败标记=1")
     private String code;
 
+    @Getter
+    @Setter
     @ApiModelProperty(value = "返回信息")
     private String msg;
 
+    @Getter
+    @Setter
     @ApiModelProperty(value = "数据")
     private T data;
 
@@ -51,6 +56,7 @@ public class ApiResp<T> implements Serializable {
     public static <T> ApiResp<T> failed(T data, String msg) {
         return restResult(data, FAIL, msg);
     }
+
 
     public static <T> ApiResp<T> restResult(T data, String code, String msg) {
         ApiResp<T> apiResult = new ApiResp<>();
