@@ -2,12 +2,15 @@ package com.william.server.entity.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
 
-
+@NoArgsConstructor
+@AllArgsConstructor
 @ApiModel(value = "响应信息主体")
 public class ApiResp<T> implements Serializable {
     private static  final long serialVersionUID = 1L;
