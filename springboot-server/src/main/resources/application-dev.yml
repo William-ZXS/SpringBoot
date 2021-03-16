@@ -20,3 +20,12 @@ spring:
 
 token:
   publicKey:
+
+management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: "*"
