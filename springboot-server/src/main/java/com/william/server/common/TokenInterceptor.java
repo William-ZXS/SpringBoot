@@ -24,11 +24,11 @@ public class TokenInterceptor implements HandlerInterceptor {
             throws Exception {
         String token = request.getHeader("Authorization");
         if (token == null || token.length() < 7) {
-            throw new CommonException("没获取到Authorization验证数据!");
+            throw new CommonException("Authorization 缺失!");
         }
         String type = token.substring(0, 7);
         if (!"Bearer ".equals(type)) {
-            throw new CommonException("Authorization类型异常!");
+            throw new CommonException("Authorization类型错误!");
         }
         String subToken = token.substring(7);
         String userNo;
