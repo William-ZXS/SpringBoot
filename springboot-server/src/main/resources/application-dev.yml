@@ -10,3 +10,13 @@ spring:
     password: william
     initialize: true
     initialization-mode: always
+  redis:
+    host: 127.0.0.1
+    database: 5
+    port: 6379
+    password: william
+
+
+
+token:
+  publicKey:

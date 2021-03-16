@@ -1,9 +1,11 @@
 package com.william.server.controller;
 
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -13,7 +15,8 @@ import org.springframework.stereotype.Controller;
  * @author william
  * @since 2021-03-10
  */
-@Controller
+@Api(tags = "库存")
+@RestController
 @RequestMapping("/stock")
 public class StockController {
 

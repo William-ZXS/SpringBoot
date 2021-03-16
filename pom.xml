@@ -26,6 +26,8 @@
 		<mybatisplus-generator.version>3.5.0-SNAPSHOT</mybatisplus-generator.version>
 		<knife4j.version>2.0.7</knife4j.version>
 		<p6spy.version>3.8.5</p6spy.version>
+		<jjwt.version>0.9.1</jjwt.version>
+		<fastjson.version>1.2.9</fastjson.version>
 	</properties>
 
 	<dependencyManagement>
@@ -53,6 +55,22 @@
 				<artifactId>p6spy</artifactId>
 				<version>${p6spy.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt.version}</version>
+			</dependency>
+
+			<!-- JSON解析框架 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+
+
 
 		</dependencies>
 	</dependencyManagement>
