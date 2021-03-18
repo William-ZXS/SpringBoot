@@ -1,8 +1,10 @@
 package com.william.server.common;
 
+import com.william.server.entity.model.JwtData;
 import com.william.server.exception.CommonException;
 import com.william.server.utils.JwtTokenUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,16 +33,16 @@ public class TokenInterceptor implements HandlerInterceptor {
             throw new CommonException("Authorization类型错误!");
         }
         String subToken = token.substring(7);
-        String userNo;
+        JwtData jwtData;
         try {
-            userNo = JwtTokenUtils.getTokenBody(subToken);
+            jwtData = JwtTokenUtils.getJwtData(subToken);
         } catch (Exception e) {
             throw new CommonException("Authorization验证失败!");
         }
-        if (userNo == null) {
+        if (ObjectUtils.isEmpty(jwtData)) {
             throw new CommonException("Authorization验证失败!");
         }
-
+        request.setAttribute("jwtData",jwtData);
         return true;
     }
 

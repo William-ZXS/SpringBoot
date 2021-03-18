@@ -1,8 +1,10 @@
 package com.william.server.utils;
 
+import com.william.server.entity.model.JwtData;
 import com.william.server.exception.CommonException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -43,15 +45,20 @@ public class JwtTokenUtils {
      * @param token 传入token信息
      * @return 返回用户对象信息
      */
-    public static String getTokenBody(String token) {
+    public static Claims getTokenBody(String token) {
         init();
-        String userNo;
+        Claims claims;
         try {
-            Claims cObj = Jwts.parser().setSigningKey(publicKey).parseClaimsJws(token).getBody();
-            userNo = String.valueOf(cObj.get("userNo"));
+            claims = Jwts.parser().setSigningKey(publicKey).parseClaimsJws(token).getBody();
         } catch (Exception e) {
             throw new CommonException("非法Token!");
         }
-        return userNo;
+        return claims;
+    }
+
+
+    public static JwtData getJwtData(String token){
+        Claims claims =  getTokenBody(token);
+        return new JwtData().setUserNo(String.valueOf(claims.get("userNo")));
     }
 }
