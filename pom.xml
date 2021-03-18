@@ -16,8 +16,8 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>springboot-server</module>
-		<module>springboot-client</module>
+		<module>springboot-stock</module>
+		<module>springboot-order</module>
 	</modules>
 
 	<properties>
